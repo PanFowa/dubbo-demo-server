@@ -16,20 +16,20 @@
 	</select>
 	
     <select id="listPermission" resultMap="resourcePermissionMap">
-        SELECT p.resource_id,resource.permission
+        SELECT p.resource_id,resource_.permission
         FROM sys_resource_permission p INNER JOIN sys_role role ON p.role_id=role.id
-        INNER JOIN sys_resource resource ON p.resource_id=resource.id
+        INNER JOIN sys_resource resource_ ON p.resource_id=resource_.id
         INNER JOIN sys_user_role ur ON role.id=ur.role_id
         WHERE ur.user_id=#{arg0}
         <if test="arg1 != null and arg1 > 0">
-            AND resource.router_id=#{arg1}
+            AND resource_.router_id=#{arg1}
         </if>        
     </select>	
 	
     <select id="listCodeByUserId" resultType="String">
-        SELECT resource.permission
+        SELECT resource_.permission
         FROM sys_resource_permission p 
-        INNER JOIN sys_resource resource ON p.resource_id=resource.id
+        INNER JOIN sys_resource resource_ ON p.resource_id=resource_.id
         INNER JOIN sys_role role ON p.role_id=role.id
         INNER JOIN sys_user_role ur ON role.id=ur.role_id
         WHERE ur.user_id=#{userId}

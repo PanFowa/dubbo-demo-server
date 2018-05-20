@@ -38,6 +38,13 @@ Dubbo-Demo-Server是基于Spring MVC+MyBatis+Shiro+Dubbo开发的分布式后台
 
 博客：[http://blog.csdn.net/hyxhbj1](http://blog.csdn.net/hyxhbj1)
 
-邮箱：lining90567@sina.com
+邮箱：lining90567@sina.
+#QAO
+#####1、ORA-01788: 此查询块中要求 CONNECT BY 子句
+    数据库字段含有level，在oracle中查询报ORA-01788: 此查询块中要求 CONNECT BY 子句
+    1.原因：sql语句中使用了order by level语句
+    2.办法：把字段改成level_（order by level_）
 
 QQ：328616209
+#系统登录用户密码
+###system/admin

@@ -7,7 +7,7 @@
         <id column="id" property="id" />
         <id column="code" property="code" />
         <id column="name" property="name" />
-        <id column="level" property="level" />
+        <id column="level_" property="level" />
         <id column="url" property="url" />
         <id column="properties" property="properties" />
 	    <association property="parent" javaType="Router">
@@ -16,7 +16,7 @@
     </resultMap>
 
     <select id="listByUserId" resultMap="permissionMapByUser">
-        SELECT router.id,router.code,router.name,router.level,router.url,router.properties,router.parent_id
+        SELECT router.id,router.code,router.name,router.level_,router.url,router.properties,router.parent_id
         FROM sys_router_permission rp 
         INNER JOIN sys_role role ON rp.role_id=role.id
         INNER JOIN sys_router router ON rp.router_id=router.id
